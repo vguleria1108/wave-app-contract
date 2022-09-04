@@ -18,4 +18,11 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  */
 module.exports = {
   solidity: "0.8.4",
+  networks: {
+    rinkeby: {
+      // This value will be replaced on runtime
+      url: process.env.STAGING_QUICKNODE_KEY,
+      accounts: [process.env.PRIVATE_KEY],
+    },
+  },
 };
