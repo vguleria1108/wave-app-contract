@@ -18,6 +18,9 @@ const main = async () => {
   //   random person waves
   waveTxn = await waveContract.connect(randomPerson).wave("Bdhiya");
   await waveTxn.wait();
+  //   random person waves, error must come for cooldown
+  waveTxn = await waveContract.connect(randomPerson).wave("Bdhiya");
+  await waveTxn.wait();
   waveCount = await waveContract.getTotalWaves();
   const allWaves = await waveContract.getAllWaves();
   console.log(allWaves);
